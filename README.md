@@ -12,7 +12,6 @@ Open `index.html` in a modern browser. Enter an oven temperature and cooking tim
 - Celsius and common UK whole/half Gas Mark inputs.
 - Whole-number Celsius input (50°C–300°C), plus large increment/decrement controls that move by 10°C.
 - Common UK whole/half Gas Mark input with a non-linear lookup and recognised-mark stepping.
-- Seven food-tip categories that change guidance only, never the conversion formula.
 - A remembered light/dark setting (device preference is used initially), with a true-black OLED dark theme and high-contrast text.
 - Modern two-drawer air-fryer icons: a 180px Apple Home Screen icon plus 192px and 512px Android/web-app icons, all served from local relative paths.
 - A visible food-safety reminder.
@@ -49,7 +48,7 @@ With Node.js installed, run:
 node tests.js
 ```
 
-This runs 27 calculation, validation, Gas Mark stability, food-category and static-deployment checks with no dependencies. See `TESTING.md` for the executed checks and remaining physical-device review.
+This runs 26 calculation, validation, Gas Mark stability, safety-notice and static-deployment checks with no dependencies. See `TESTING.md` for the executed checks and remaining physical-device review.
 
 ## GitHub Pages deployment
 

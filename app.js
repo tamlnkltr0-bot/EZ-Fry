@@ -2,7 +2,6 @@
   "use strict";
 
   const calc = window.AirFryerCalc;
-  const foodTips = calc.FOOD_TIPS;
   const state = {
     ovenType: "conventional",
     unit: "celsius",
@@ -13,7 +12,6 @@
   };
   const temperature = document.querySelector("#temperature");
   const time = document.querySelector("#time");
-  const food = document.querySelector("#food");
   const temperatureUnit = document.querySelector("#temperature-unit");
   const temperatureHelp = document.querySelector("#temperature-help");
   const message = document.querySelector("#validation-message");
@@ -21,8 +19,6 @@
   const checkReminder = document.querySelector("#check-reminder");
   const resultTemperature = document.querySelector("#result-temperature");
   const resultTime = document.querySelector("#result-time");
-  const foodName = document.querySelector("#food-name");
-  const tipsList = document.querySelector("#tips-list");
   const themeToggle = document.querySelector("#theme-toggle");
   const exitButton = document.querySelector("#exit-button");
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
@@ -33,16 +29,6 @@
 
   function formatNumber(value) {
     return Number.isInteger(value) ? String(value) : String(value).replace(/\.0$/, "");
-  }
-
-  function renderTips() {
-    const details = foodTips[food.value];
-    foodName.textContent = details.name;
-    tipsList.replaceChildren(...details.tips.map((tip) => {
-      const item = document.createElement("li");
-      item.textContent = tip;
-      return item;
-    }));
   }
 
   function updateButtons(group, key, selected) {
@@ -190,7 +176,6 @@
     updateResults();
   });
   time.addEventListener("input", updateResults);
-  food.addEventListener("change", renderTips);
   themeToggle.addEventListener("click", () => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true));
   exitButton.addEventListener("click", exitApp);
 
@@ -198,6 +183,5 @@
   try { storedTheme = localStorage.getItem("airFryerTheme"); } catch (error) { /* Storage unavailable; fall back to device preference. */ }
   applyTheme(storedTheme || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"), false);
   configureTemperatureInput();
-  renderTips();
   updateResults();
 })();

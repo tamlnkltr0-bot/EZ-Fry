@@ -19,16 +19,6 @@
   const AIR_FRY_MAX = 240;
   const EPSILON = 0.000001;
 
-  const FOOD_TIPS = Object.freeze({
-    chips: Object.freeze({ name: "chips and wedges", tips: Object.freeze(["Avoid overcrowding the basket.", "Shake halfway through.", "Check for even browning."]) }),
-    chicken: Object.freeze({ name: "chicken pieces", tips: Object.freeze(["Turn halfway through where appropriate.", "Use a food thermometer; 75°C for 30 seconds is one recognised safe combination.", "Allow appropriate resting time."]) }),
-    fish: Object.freeze({ name: "fish and fillets", tips: Object.freeze(["Check thicker portions carefully.", "Avoid overcrowding.", "Handle delicate fillets carefully when turning."]) }),
-    vegetables: Object.freeze({ name: "roast vegetables", tips: Object.freeze(["Cut pieces to similar sizes.", "Shake or turn during cooking.", "Avoid overcrowding."]) }),
-    frozen: Object.freeze({ name: "frozen oven food", tips: Object.freeze(["Check packaging for specific air fryer instructions.", "Cook from frozen only where appropriate.", "Check the centre is properly cooked."]) }),
-    baking: Object.freeze({ name: "baking and cakes", tips: Object.freeze(["Use suitable air fryer-safe bakeware.", "Check the centre for doneness.", "Avoid overfilling."]) }),
-    other: Object.freeze({ name: "this food", tips: Object.freeze(["Check food regularly.", "Turn or shake where appropriate.", "Confirm food is properly cooked."]) })
-  });
-
   function strictNumber(value) {
     if (value === "" || value === null || value === undefined || (typeof value === "string" && value.trim() === "")) return null;
     const parsed = Number(value);
@@ -118,7 +108,7 @@
   }
 
   const api = {
-    GAS_MARKS, GAS_VALUES, FOOD_TIPS, CELSIUS_MIN, CELSIUS_MAX, MINUTES_MIN, MINUTES_MAX,
+    GAS_MARKS, GAS_VALUES, CELSIUS_MIN, CELSIUS_MAX, MINUTES_MIN, MINUTES_MAX,
     gasToCelsius, celsiusToNearestGas, nextGasMark, toGasDisplay, fromGasDisplay, validateCelsius, validateGasMark,
     validateMinutes, roundHalfUp, roundToTen, convert
   };

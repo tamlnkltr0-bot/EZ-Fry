@@ -81,10 +81,6 @@ select { width: 100%; min-height: 50px; padding: 0 13px; appearance: auto; color
 .validation-message:empty { display: none; }
 .result-grid[hidden], .check-reminder[hidden] { display: none; }
 
-.tips-panel { margin-top: 4px; }
-.tips-panel ul { display: grid; gap: 7px; padding: 0; margin: 0; list-style: none; }
-.tips-panel li { display: flex; gap: 9px; color: var(--muted); font-size: .89rem; }
-.tips-panel li::before { content: ""; width: 7px; height: 7px; flex: 0 0 7px; margin-top: .45em; background: var(--accent); border-radius: 50%; }
 .safety-notice { display: grid; grid-template-columns: auto 1fr; gap: 10px; padding: 14px; margin-top: 14px; border: 1px solid color-mix(in srgb, var(--accent) 37%, var(--line)); border-radius: 15px; background: color-mix(in srgb, var(--accent) 7%, var(--panel)); }
 .safety-icon { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; color: var(--accent-ink); background: var(--accent); font-weight: 900; }
 .safety-notice h2 { margin-bottom: 3px; }
@@ -94,7 +90,7 @@ select { width: 100%; min-height: 50px; padding: 0 13px; appearance: auto; color
 
 @media (min-width: 620px) {
   .controls-panel { grid-template-columns: 1fr 1fr; column-gap: 16px; align-items: start; }
-  .controls-panel > h2, .food-control, .gas-help { grid-column: 1 / -1; }
+  .controls-panel > h2, .gas-help { grid-column: 1 / -1; }
   .controls-panel fieldset { grid-column: auto; }
   .temperature-control { grid-column: 1; grid-row: 3; }
   .time-control { grid-column: 2; grid-row: 3; }
@@ -124,9 +120,6 @@ select { width: 100%; min-height: 50px; padding: 0 13px; appearance: auto; color
   .result-card { min-height: 94px; padding: 11px; border-radius: 13px; }
   .result-card output { font-size: clamp(1.45rem, 8.4vw, 2rem); }
   .check-reminder { margin-top: 8px; padding: 8px 10px; font-size: .84rem; }
-  .tips-panel { margin-top: 0; }
-  .tips-panel ul { gap: 5px; }
-  .tips-panel li { font-size: .86rem; }
   .safety-notice { gap: 8px; padding: 12px; margin-top: 12px; border-radius: 14px; }
   .safety-notice p { font-size: .84rem; line-height: 1.45; }
 }

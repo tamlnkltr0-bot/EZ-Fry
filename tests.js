@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const {
   convert, gasToCelsius, celsiusToNearestGas, nextGasMark, toGasDisplay, fromGasDisplay,
-  validateCelsius, validateGasMark, validateMinutes, roundToTen, FOOD_TIPS
+  validateCelsius, validateGasMark, validateMinutes, roundToTen
 } = require("./calculation.js");
 
 let checks = 0;
@@ -78,15 +78,10 @@ test("Gas Mark 4 / 10 min cannot retain old results", () => {
   const result = convert({ ovenType: "conventional", unit: "gas", temperature: 4, minutes: 10 });
   assert.equal(result.airFryerTemperature, 140); assert.equal(result.airFryerMinutes, 8); assert.equal(result.checkAfter, 6);
 });
-test("all seven food categories have concise contextual tips", () => {
-  assert.deepEqual(Object.keys(FOOD_TIPS), ["chips", "chicken", "fish", "vegetables", "frozen", "baking", "other"]);
-  Object.values(FOOD_TIPS).forEach((food) => { assert.ok(food.name); assert.equal(food.tips.length, 3); food.tips.forEach((tip) => assert.ok(tip.length > 8)); });
-});
-test("75°C guidance is kept in chicken tips, not repeated in the general safety notice", () => {
+test("the safety notice includes the 75°C safe-cooking guidance", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
-  assert.match(FOOD_TIPS.chicken.tips.join(" "), /75°C for 30 seconds/);
   const safetyCopy = html.match(/<aside class="safety-notice"[\s\S]*?<\/aside>/)[0];
-  assert.doesNotMatch(safetyCopy, /75°C/);
+  assert.match(safetyCopy, /75°C for 30 seconds/);
 });
 test("GitHub Pages entry point uses only local application assets", () => {
   const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
@@ -117,7 +112,6 @@ test("the UI wires immediate updates, local theme persistence and stable unit st
   assert.match(source, /localStorage\.getItem\("airFryerTheme"\)/);
   assert.match(source, /localStorage\.setItem\("airFryerTheme"/);
   assert.match(source, /temperature\.addEventListener\("input"/);
-  assert.match(source, /food\.addEventListener\("change", renderTips\)/);
   assert.match(source, /savedCelsius/);
   assert.match(source, /exitButton\.addEventListener\("click", exitApp\)/);
 });
