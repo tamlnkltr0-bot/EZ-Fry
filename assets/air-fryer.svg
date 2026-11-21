@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <mask id="drawers">
+      <rect width="64" height="64" fill="#fff"/>
+      <rect x="9" y="25" width="21" height="22" rx="4" fill="#000"/>
+      <rect x="34" y="25" width="21" height="22" rx="4" fill="#000"/>
+      <rect x="14" y="34" width="11" height="3" rx="1.5" fill="#fff"/>
+      <rect x="39" y="34" width="11" height="3" rx="1.5" fill="#fff"/>
+      <rect x="9" y="17" width="20" height="6" rx="2" fill="#000"/>
+      <rect x="12" y="19" width="7" height="1" rx=".5" fill="#fff"/>
+      <rect x="12" y="21" width="4.5" height="1" rx=".5" fill="#fff"/>
+      <circle cx="50" cy="20" r="3" fill="#000"/>
+      <circle cx="50" cy="20" r="1.2" fill="#fff"/>
+    </mask>
+  </defs>
+  <rect x="6" y="14" width="52" height="38" rx="7" fill="#26d9c0" mask="url(#drawers)"/>
+</svg>
