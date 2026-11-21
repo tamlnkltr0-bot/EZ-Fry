@@ -100,7 +100,7 @@ test("Home Screen icon references use local PNG files at the required sizes", ()
     return [png.readUInt32BE(16), png.readUInt32BE(20)];
   };
   assert.match(html, /rel="apple-touch-icon" sizes="180x180" href="assets\/apple-touch-icon\.png"/);
-  assert.match(html, /apple-mobile-web-app-title" content="Air Fryer Converter"/);
+  assert.match(html, /apple-mobile-web-app-title" content="EZ-Fry"/);
   assert.deepEqual(dimensions("apple-touch-icon.png"), [180, 180]);
   assert.deepEqual(dimensions("icon-192.png"), [192, 192]);
   assert.deepEqual(dimensions("icon-512.png"), [512, 512]);

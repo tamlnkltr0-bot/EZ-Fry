@@ -1,4 +1,4 @@
-# EZ-Fry — Air Fryer Converter
+# EZ-Fry — Air Fryer Calculator
 
 A lightweight, single-page, static calculator that turns conventional or fan-oven instructions into a cautious air fryer estimate. It needs no build step, account, API, analytics or backend, and is ready for GitHub Pages.
 

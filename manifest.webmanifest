@@ -1,6 +1,6 @@
 {
-  "name": "Air Fryer Converter",
-  "short_name": "Air Fryer",
+  "name": "EZ-Fry — Air Fryer Calculator",
+  "short_name": "EZ-Fry",
   "description": "Safety-first air fryer conversion estimates.",
   "start_url": "./",
   "display": "standalone",
